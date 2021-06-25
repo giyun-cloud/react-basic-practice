@@ -8,10 +8,12 @@ import {
 import Home from "routes/Home";
 import Search from "routes/Search";
 import Tv from "routes/Tv";
+import Header from "components/Header";
 
 const AppRouter = () => (
   <>
     <Router>
+      <Header />
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/tv" exact component={Tv} />

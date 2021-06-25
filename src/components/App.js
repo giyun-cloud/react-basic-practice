@@ -1,12 +1,12 @@
 import React from "react";
-import AppRouter from "./Router";
-import Header from "./Header";
+import AppRouter from "components/Router";
+import GlobalStyles from "components/GlobalStyles";
 
 function App() {
   return (
     <>
-      <Header />
       <AppRouter />
+      <GlobalStyles />
     </>
   );
 }
