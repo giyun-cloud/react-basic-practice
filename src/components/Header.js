@@ -17,7 +17,6 @@ const Ul = styled.ul`
 `;
 const Li = styled.li`
   height: 50px;
-  box-sizing: border-box;
   border-bottom: 4px solid
     ${(props) =>
       props.current === props.children.props.to ? "#868e96" : "transparent"};
