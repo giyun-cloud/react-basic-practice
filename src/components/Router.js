@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import Home from "routes/Home";
 import Search from "routes/Search";
-import Tv from "routes/Tv";
+import TV from "routes/TV";
 import Header from "components/Header";
 
 const AppRouter = () => (
@@ -16,7 +16,7 @@ const AppRouter = () => (
       <Header />
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/tv" exact component={Tv} />
+        <Route path="/tv" exact component={TV} />
         <Route path="/search" component={Search} />
         <Redirect from="*" to="/" />
       </Switch>
