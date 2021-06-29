@@ -13,8 +13,20 @@ class HomeContainer extends Component {
 
   async componentDidMount() {
     try {
-      const nowPlaying = await moivesApi.nowPlaying();
-      console.log("💛", nowPlaying);
+      const {
+        data: { results: nowPlaying },
+      } = await moivesApi.nowPlaying();
+      const {
+        data: { results: upcoming },
+      } = await moivesApi.upcoming();
+      const {
+        data: { results: popular },
+      } = await moivesApi.popular();
+      this.setState({
+        nowPlaying,
+        upcoming,
+        popular,
+      });
     } catch (error) {
       this.setState({
         error: `Error: ${error}`,
