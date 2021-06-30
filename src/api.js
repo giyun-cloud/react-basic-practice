@@ -16,7 +16,7 @@ export const moivesApi = {
   movieDetail: (id) =>
     api.get(`movie/${id}`, { params: { append_to_response: "videos" } }),
   search: (str) =>
-    api.get("search/moive", { params: { query: encodeURIComponent(str) } }),
+    api.get("search/movie", { params: { query: encodeURIComponent(str) } }),
 };
 export const tvApi = {
   popular: () => api.get("tv/popular"),

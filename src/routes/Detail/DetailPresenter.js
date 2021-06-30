@@ -1,7 +1,12 @@
 import React from "react";
 
-function DetailPresenter() {
-  return <div>Detail</div>;
+function DetailPresenter({ id }) {
+  return (
+    <>
+      <div>Detail</div>
+      <div>id: {id}</div>
+    </>
+  );
 }
 
 export default DetailPresenter;
