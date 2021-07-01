@@ -48,14 +48,7 @@ class DetailContainer extends Component {
       },
     } = this.props;
     console.log(this.state);
-    return (
-      <DetailPresenter
-        result={result}
-        error={error}
-        loading={loading}
-        id={id}
-      />
-    );
+    return <DetailPresenter result={result} error={error} loading={loading} />;
   }
 }
 export default DetailContainer;

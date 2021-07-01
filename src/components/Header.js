@@ -37,7 +37,7 @@ const Header = ({ location: { pathname } }) => (
   <SHeader>
     <Ul>
       <Li current={pathname}>
-        <SLink to="/">Home</SLink>
+        <SLink to="/">Movie</SLink>
       </Li>
       <Li current={pathname}>
         <SLink to="/tv">TV</SLink>
