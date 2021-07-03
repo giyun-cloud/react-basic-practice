@@ -4,9 +4,10 @@ import PropTypes from "prop-types";
 import Section from "components/Section";
 import Loader from "components/Loader";
 import Message from "components/Message";
+import Poster from "components/Poster";
 
 const Container = styled.div`
-  padding: 0 20px;
+  padding: 20px;
 `;
 const Form = styled.form``;
 const Input = styled.input`
@@ -40,7 +41,15 @@ function SearchPresenter({
           {movieResult && movieResult.length > 0 && (
             <Section title="Movie Results">
               {movieResult.map((cur) => (
-                <span key={cur.id}>{cur.title}</span>
+                <Poster
+                  key={cur.id}
+                  id={cur.id}
+                  title={cur.title || cur.original_title}
+                  isMovie
+                  imageUrl={cur.poster_path}
+                  rating={cur.vote_average}
+                  year={cur.release_date && cur.release_date.substring(0, 4)}
+                />
               ))}
             </Section>
           )}
@@ -48,7 +57,16 @@ function SearchPresenter({
           {tvResults && tvResults.length > 0 && (
             <Section title="TV Results">
               {tvResults.map((cur) => (
-                <span key={cur.id}>{cur.name}</span>
+                <Poster
+                  key={cur.id}
+                  id={cur.id}
+                  title={cur.name || cur.original_name}
+                  imageUrl={cur.poster_path}
+                  rating={cur.vote_average}
+                  year={
+                    cur.first_air_date && cur.first_air_date.substring(0, 4)
+                  }
+                />
               ))}
             </Section>
           )}

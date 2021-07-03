@@ -22,6 +22,7 @@ class HomeContainer extends Component {
       const {
         data: { results: popular },
       } = await moivesApi.popular();
+
       this.setState({
         nowPlaying,
         upcoming,
@@ -29,7 +30,7 @@ class HomeContainer extends Component {
       });
     } catch (error) {
       this.setState({
-        error: `Error: ${error}`,
+        error: `🔴 ${error}`,
       });
     } finally {
       this.setState({

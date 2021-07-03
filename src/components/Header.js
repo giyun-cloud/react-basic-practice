@@ -3,12 +3,15 @@ import styled from "styled-components";
 import { Link, withRouter } from "react-router-dom";
 
 const SHeader = styled.header`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background-color: rgba(20, 20, 20, 0.8);
   box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
 `;
 
 const Ul = styled.ul`

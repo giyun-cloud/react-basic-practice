@@ -3,9 +3,11 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import Section from "components/Section";
 import Loader from "components/Loader";
+import Message from "components/Message";
+import Poster from "components/Poster";
 
 const Container = styled.div`
-  padding: 0 20px;
+  padding: 20px;
 `;
 
 function TVPresenter({ popular, topRated, airingToday, error, loading }) {
@@ -16,24 +18,46 @@ function TVPresenter({ popular, topRated, airingToday, error, loading }) {
       {topRated && topRated.length && (
         <Section title="Top Rated Shows">
           {topRated.map((cur) => (
-            <span key={cur.id}>{cur.name}</span>
+            <Poster
+              key={cur.id}
+              id={cur.id}
+              title={cur.name || cur.original_name}
+              imageUrl={cur.poster_path}
+              rating={cur.vote_average}
+              year={cur.first_air_date && cur.first_air_date.substring(0, 4)}
+            />
           ))}
         </Section>
       )}
       {popular && popular.length && (
         <Section title="Popular Shows">
           {popular.map((cur) => (
-            <span key={cur.id}>{cur.name}</span>
+            <Poster
+              key={cur.id}
+              id={cur.id}
+              title={cur.name || cur.original_name}
+              imageUrl={cur.poster_path}
+              rating={cur.vote_average}
+              year={cur.first_air_date && cur.first_air_date.substring(0, 4)}
+            />
           ))}
         </Section>
       )}
       {airingToday && airingToday.length && (
         <Section title="Airing Today">
           {airingToday.map((cur) => (
-            <span key={cur.id}>{cur.name}</span>
+            <Poster
+              key={cur.id}
+              id={cur.id}
+              title={cur.name || cur.original_name}
+              imageUrl={cur.poster_path}
+              rating={cur.vote_average}
+              year={cur.first_air_date && cur.first_air_date.substring(0, 4)}
+            />
           ))}
         </Section>
       )}
+      {error ? <Message text={error} color="#e67e22" /> : null}
     </Container>
   );
 }

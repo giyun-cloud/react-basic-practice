@@ -42,12 +42,6 @@ class DetailContainer extends Component {
   }
   render() {
     const { result, error, loading } = this.state;
-    const {
-      match: {
-        params: { id },
-      },
-    } = this.props;
-    console.log(this.state);
     return <DetailPresenter result={result} error={error} loading={loading} />;
   }
 }
