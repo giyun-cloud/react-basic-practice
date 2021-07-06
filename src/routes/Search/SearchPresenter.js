@@ -35,7 +35,7 @@ function SearchPresenter({
         <Form onSubmit={handleSubmit}>
           <Input
             onChange={updateStr}
-            placeholder="Please enter search term in English"
+            placeholder="Please enter search term"
             value={searchStr}
           />
         </Form>
